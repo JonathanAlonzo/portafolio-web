@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/css/media_queries.css';
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    height: 100%;
+    background: radial-gradient(73.29% 73.29% at 74.72% 26.71%, #004B6B 0%, #002F49 100%);
+    background-repeat: no-repeat;
+}
+aside {
+    height: 30%;
+    position: fixed;
+    top: 35%;
+    background: rgba(217, 217, 217, 0.5);
+    backdrop-filter: blur(50px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 10px;
+    opacity: 50%;
+    width: 45px;
+}
+label {
+    color: bisque;
+}
+.ct-main-container {
+    gap: 200px !important;
+}
+.ct-resume{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 32rem;
+}
+.ct-card {
+    background: rgba(217, 217, 217, 0.1);
+    backdrop-filter: blur(50px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 10px;
+    height: 100%;
+    max-height: 250px;
+    transition: 0.2s;
+}
+.ct-card:hover {
+    background: rgba(217, 217, 217, 0.35);
+    backdrop-filter: blur(50px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.ct-item-pointer {
+    cursor: pointer;
+}
+.ct-item-scroll {
+    overflow: scroll;
+    height: 130px;
+}
+.ct-scroll-auto-rigth-to-left {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+.ct-items-scroll {
+    display: flex;
+    gap: 20px;
+    animation: scroll 45s infinite linear;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.ct-form-container {
+    max-width: 450px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0) }
+    100% { transform: translateX(-40%) }
+}

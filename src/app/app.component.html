@@ -1,0 +1,119 @@
+<aside class="p-2 shadow mx-2 z-3">
+    <section class="d-flex flex-column gap-2 py-2">
+        @for (item of menuItems; track $index) {
+            <a href="#{{ item.href }}" class="d-flex align-items-center justify-content-center bg-white p-1 border rounded">
+                <img src="{{ imgPath }}{{ item.imgName }}" alt="{{ item.imgName }}" width="18px">
+            </a>
+        }
+        <button class="btn btn-sm btn-seconsary text-white p-0 m-0" (click)="changeLanguage()">
+            <p class="mb-0">{{ (lan) ? 'En' : 'Es' }}</p>
+        </button>
+    </section>
+</aside>
+<main class="container-sm ct-main-container">
+    <section id="presentation" class="d-flex flex-column gap-4 align-items-center justify-content-center vh-100">
+        <figure class="d-flex flex-column align-items-center justify-content-center">
+            <img src="../assets/img/me.png" width="135" alt="me">
+            <figcaption class="d-flex mt-3 align-items-center justify-content-center gap-3">
+                <span class="p-3 bg-white rounded-circle"></span>
+                <span class="p-3 bg-white rounded-circle"></span>
+            </figcaption>
+        </figure>
+        <article class="d-flex flex-column align-items-center ct-resume">
+            <h1 class="text-warning mb-3">Hey, I am Jonathan Ojeda :)</h1>
+            <p class="text-white">He desarrollado este portafolio de proyectos para que le des un vistaso a mi trabajo,
+                tanto en mis proyectos en la universidad, personales y mi trayectoria laboral como desarrollador Web.
+            </p>
+        </article>
+        <article class="d-flex align-items-center gap-3">
+            <span class="p-3 bg-white rounded-circle"></span>
+            <span class="p-3 bg-white rounded-circle"></span>
+            <span class="p-3 bg-white rounded-circle"></span>
+            <span class="p-3 bg-white rounded-circle"></span>
+        </article>
+        <div class="d-flex align-items-center gap-2 border-top py-2">
+            <button class="btn btn-sm btn-secondary">Ver proyectos</button>
+            <button class="btn btn-sm btn-secondary">Visita mi blog</button>
+        </div>
+    </section>
+    <section id="projects" class="d-flex flex-column my-5">
+        <h3 class="text-warning">Mis proyectos</h3>
+        <article class="d-flex flex-wrap align-items-center">
+            @for (item of allProyects; track $index) {
+            <div class="col-md-6 p-3" data-bs-toggle="modal" data-bs-target="#proyectDetails">
+                <div class="ct-card ct-item-pointer">
+                    <h5 class="text-warning p-3">{{ item.name }}</h5>
+                    <main class="d-flex mx-2">
+                        <span class="p-5 col"></span>
+                        <div class="col-5 p-2 rounded ct-item-scroll">
+                            <small>descripcion del proyecto, Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ducimus facere voluptatibus sint nesciunt iure cumque quibusdam facilis fugiat?
+                                Repellendus quas labore tempore aspernatur eos. Molestias, rerum pariatur? In, esse
+                                maxime!</small>
+                        </div>
+                    </main>
+                    <footer class="p-3">
+                        <small>Opciones para visualizar el proyecto</small>
+                    </footer>
+                </div>
+            </div>
+            }
+        </article>
+    </section>
+    <section id="history" class="d-flex flex-column my-5">
+        <h3 class="text-warning">Mi preparacion academica y Experiencia laboral</h3>
+        <article class="d-flex justify-content-between">
+            <div class="col-md-1 d-flex align-items-start justify-content-center">X</div>
+            <div class="col-md d-flex flex-column">
+                <h5 class="text-secondary">2000 - 2015</h5>
+                <p class="text-white">Inicie mis estudios en la universidad tencnologica del poniente, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem obcaecati cum reprehenderit, recusandae quas explicabo soluta magnam sunt earum excepturi deserunt fuga aperiam iste perferendis placeat laborum! Recusandae, vitae reprehenderit! </p>
+            </div>
+        </article>
+    </section>
+    <section id="contact" class="d-flex flex-column my-5">
+        <h3 class="text-warning">Contactame y trabajemos juntos.</h3>
+        <article class="d-flex flex-column align-items-center justify-content-center">
+            <form class="d-flex flex-column gap-4 ct-form-container">
+                <div class="form-group">
+                    <label for="email">Ingresa tu correo para poder responderte.</label>
+                    <input class="form-control" type="email" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Redacta tus comentarios, ideas, propuestas, o alguna idea para iniciar nuestra colaboracion juntos.</label>
+                    <textarea class="form-control" name="message" id="messaje" cols="30" rows="10"></textarea>
+                </div>
+                <div class="d-flex align-items-center justify-content-end">
+                    <button class="btn btn-sm btn-success">Enviar correo!</button>
+                </div>
+            </form>
+        </article>
+    </section>
+    <section class="d-flex align-items-center justify-content-center mb-5">
+        <small class="text-secondary">Jonathan Ojeda, Desarrollador Web.</small>
+    </section>
+</main>
+<!-- Modal -->
+<div class="modal fade" id="proyectDetails" tabindex="-1" aria-labelledby="proyectDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="proyectDetailsLabel">Proyect naname goes here</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <section class="d-flex gap-2 justify-content-between">
+                    <article class="col-md border rounded shadow">
+                        <img src="../assets/img/firstDesktop.png" class="img-fluid rounded" alt="image">
+                    </article>
+                    <article class="col-md-4 p-3 border rounded shadow-sm">
+                        <p>Descripcion general de proyecto</p>
+                    </article>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary btn-sm">Visistar proyecto</button>
+            </div>
+        </div>
+    </div>
+</div>

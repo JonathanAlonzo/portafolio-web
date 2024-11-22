@@ -1,0 +1,6 @@
+@media (min-width: 37.5rem) {
+    .ct-container {
+        width: 100%;
+        max-width: 40rem;
+    }
+}
